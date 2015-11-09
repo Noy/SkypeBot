@@ -13,6 +13,7 @@ import java.util.Random;
 /**
  * Created by Noy on 10/05/2014.
  */
+// lmfao
 public final class ImageSearch extends SubCommand {
     @Override
     public void onCommand(Chat chat, User sender, String[] args) throws Exception {
