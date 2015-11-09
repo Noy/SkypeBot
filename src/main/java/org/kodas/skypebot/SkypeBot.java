@@ -27,7 +27,6 @@ public final class SkypeBot {
 
     public static void main(String[] args) {
         log.info("Starting SkypeBot..");
-        log.info("Started!");
         Skype.setDaemon(false);
         try {
             File file = new File(LAST_FILE);
@@ -43,8 +42,10 @@ public final class SkypeBot {
                 }
             }
             new SkypeBot().start();
+            log.info("Started!");
         } catch (SkypeException | FileNotFoundException e) {
             System.exit(0);
+            log.info("FAILED! Check console.");
         }
     }
 
@@ -114,8 +115,6 @@ public final class SkypeBot {
         commands.put("clearchat", new ClearChatCommand());
         commands.put("getusers", new GetUsersCommand());
         commands.put("<3", new HeartCommand());
-        commands.put("(bear)", new BearCommand());
-        commands.put("(hug)", new BearCommand());
         commands.put("mlg", new MLGCommand());
         commands.put("ban", new BanCommand());
         commands.put("kickban", new KickBanCommand());

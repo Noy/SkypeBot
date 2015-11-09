@@ -13,7 +13,7 @@ public final class ClearChatCommand extends SubCommand {
     @Override
     public void onCommand(Chat chat, User sender, String[] args) throws Exception {
         if (Permissions.hasPermission(sender, chat, "clearchat")) {
-            for (Integer i = 0; i < 30; i++) {
+            for (Integer i = 0; i < 100; i++) {
                 chat.send("Chat Clearing... ");
             }
         }
