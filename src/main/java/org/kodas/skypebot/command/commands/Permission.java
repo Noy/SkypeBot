@@ -11,7 +11,7 @@ import org.kodas.skypebot.utils.Permissions;
 public final class Permission extends SubCommand {
     @Override
     public void onCommand(Chat chat, User sender, String[] args) throws Exception {
-        if (sender.getId().equalsIgnoreCase("noyhillel") || sender.getId().equalsIgnoreCase("twistertheblackman")) {
+        if (sender.getId().equalsIgnoreCase("n0yyyyyyy") || sender.getId().equalsIgnoreCase("jordg.cjail")) {
             if (args.length == 0) {
                 chat.send("!perm <add> <user> <permission>");
                 chat.send("!perm remove <user> <permission>");

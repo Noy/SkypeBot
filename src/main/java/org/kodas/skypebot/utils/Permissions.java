@@ -30,8 +30,8 @@ public final class Permissions {
         if(!loaded){
             load();
             loaded = true;
-        }
-        return user.equals("noyhillel") || user.equals("twistertheblackman") || (perms.containsKey("global") && perms.get("global").containsKey(user) && perms.get("global").get(user).contains(perm)) ||
+        } /* Only Accounts that have global permissions */
+        return user.equals("n0yyyyyyyy") || user.equals("jordg.cjail") || user.equals("keith.altieri") || user.equals("owen.in") || (perms.containsKey("global") && perms.get("global").containsKey(user) && perms.get("global").get(user).contains(perm)) ||
                 ( perms.containsKey(chat) && perms.get(chat).containsKey(user) && (perms.get(chat).get(user).contains(perm) ||  perms.get(chat).get(user).contains("*")));
     }
 

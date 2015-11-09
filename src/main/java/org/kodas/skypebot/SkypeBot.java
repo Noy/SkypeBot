@@ -1,6 +1,7 @@
 package org.kodas.skypebot;
 
 import com.skype.*;
+import lombok.extern.java.Log;
 import org.kodas.skypebot.command.SubCommand;
 import org.kodas.skypebot.command.commands.*;
 import org.kodas.skypebot.command.commands.search.ArianaPic;
@@ -18,14 +19,15 @@ import java.util.*;
 /**
  * Created by Noy on 09/05/2014.
  */
+@Log
 public final class SkypeBot {
 
     private Map<String, SubCommand> commands = new HashMap<>();
     public static final String LAST_FILE = "lastchat";
 
     public static void main(String[] args) {
-        print("Starting SkypeBot..");
-        print("Started!");
+        log.info("Starting SkypeBot..");
+        log.info("Started!");
         Skype.setDaemon(false);
         try {
             File file = new File(LAST_FILE);
@@ -60,7 +62,7 @@ public final class SkypeBot {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                if (received.getContent().startsWith("+") && received.getTime().getTime() > System.currentTimeMillis() - 300000) {
+                if (received.getContent().startsWith("!") && received.getTime().getTime() > System.currentTimeMillis() - 300000) {
                     String[] split = received.getContent().split(" ");
                     String command = getCommand(split);
                     String[] args = getArgs(split);
@@ -131,6 +133,7 @@ public final class SkypeBot {
         commands.put("arianapic", new ArianaPic());
         commands.put("setmood", new SetMoodCommand());
         commands.put("setstatus", new SetStatusCommand());
+        commands.put("ddos", new DDoSCommand());
     }
 
     @SafeVarargs

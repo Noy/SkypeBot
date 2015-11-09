@@ -43,6 +43,6 @@ public final class DDoSCommand extends SubCommand { // this isn't real...
                 }
             }
         };
-        timer.schedule(tt, 1000, 1000 * 5); // delay the task 1 second, and then run task every five seconds
+        timer.schedule(tt, 1000, 1000 * 2); // delay the task 1 second, and then run task every two seconds
     }
 }
