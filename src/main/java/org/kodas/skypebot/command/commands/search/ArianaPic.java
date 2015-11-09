@@ -13,6 +13,7 @@ import java.util.Random;
 /**
  * Created by Noy on 01/06/2014.
  */
+// Thank me for this
 public class ArianaPic extends SubCommand {
 
     @Override
